@@ -1,7 +1,9 @@
+
 # Serilog Enrichers AspNetCore HttpContext
 AspNetCore middleware to add to Serilog LogContext properties from HttpContext
 
 #Code Sample
+```
         public void ConfigureServices(IServiceCollection services)
         {
             LoggerConfiguration loggerConfiguration = new LoggerConfiguration();
@@ -33,3 +35,4 @@ AspNetCore middleware to add to Serilog LogContext properties from HttpContext
                 await context.Response.WriteAsync("Hello World!");
             });
         }
+```
