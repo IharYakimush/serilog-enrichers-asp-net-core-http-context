@@ -36,3 +36,5 @@ AspNetCore middleware to add to Serilog LogContext properties from HttpContext
             });
         }
 ```
+# Console Optput
+`[17:26:46 INF]  Hellow World Log. TraceId: 0HLFDGEJTQ5RQ:00000001 {SourceContext="Demo", RequestId="0HLFDGEJTQ5RQ:00000001", RequestPath="/", CorrelationId=null, ConnectionId="0HLFDGEJTQ5RQ"}`
