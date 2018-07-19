@@ -2,7 +2,10 @@
 # Serilog Enrichers AspNetCore HttpContext
 AspNetCore middleware to add to Serilog LogContext properties from HttpContext
 
-#Code Sample
+# Usage
+Register this middleware as early as possible to use HttpContext properties in chained middlewares.
+
+## Code Sample
 ```
         public void ConfigureServices(IServiceCollection services)
         {
@@ -36,5 +39,8 @@ AspNetCore middleware to add to Serilog LogContext properties from HttpContext
             });
         }
 ```
-# Console Optput
+## Console Optput
 `[17:26:46 INF]  Hellow World Log. TraceId: 0HLFDGEJTQ5RQ:00000001 {SourceContext="Demo", RequestId="0HLFDGEJTQ5RQ:00000001", RequestPath="/", CorrelationId=null, ConnectionId="0HLFDGEJTQ5RQ"}`
+
+# Nuget
+https://www.nuget.org/packages/Serilog.Enrichers.AspNetCore.HttpContext
