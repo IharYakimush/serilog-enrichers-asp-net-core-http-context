@@ -24,12 +24,12 @@ namespace Serilog.Enrichers.AspNetCore.HttpContext
 
         public async Task InvokeAsync(HttpContext context)
         {
-            IEnumerable<ILogEventEnricher> enrichers = null;
+            ILogEventEnricher[] enrichers = null;
             if (this._options.EnrichersForContextFactory != null)
             {
                 try
                 {
-                    enrichers = this._options.EnrichersForContextFactory(context);
+                    enrichers = this._options.EnrichersForContextFactory(context)?.ToArray();
                 }
                 catch
                 {
@@ -43,10 +43,9 @@ namespace Serilog.Enrichers.AspNetCore.HttpContext
             bool nextExecuted = false;
             if (enrichers != null)
             {
-                var array = enrichers.ToArray();
-                if (array.Any())
+                if (enrichers.Any())
                 {
-                    using (LogContext.Push(array))
+                    using (LogContext.Push(enrichers))
                     {
                         await _next(context);
                         nextExecuted = true;

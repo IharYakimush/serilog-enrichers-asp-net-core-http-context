@@ -10,8 +10,10 @@
     <Description>Serilog Enricher to Set Properties From AspNetCore HttpContext to Serilog LogContext</Description>
     <PackageLicenseUrl>https://github.com/IharYakimush/serilog-enrichers-asp-net-core-http-context/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/IharYakimush/serilog-enrichers-asp-net-core-http-context</PackageProjectUrl>
+    <PackageIconUrl>https://serilog.net/images/serilog-extension-nuget.png</PackageIconUrl>
     <PackageTags>serilog enricher aspnetcore</PackageTags>
-    <PackageReleaseNotes />
+    <PackageReleaseNotes>Exception handling for enrichers factory fixed. Nuget package icon added.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
